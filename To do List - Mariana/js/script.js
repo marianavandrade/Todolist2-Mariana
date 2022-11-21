@@ -9,12 +9,17 @@ function criaTarefa() {
     span.classList.add('textoTarefa');
     span.innerHTML = nomeTarefa;
     
-    let btnExcluir  = document.createElement('button');
-    btnExcluir.classList.add('btnAcao');
+    let div = document.createElement('div');
+    let btnExcluir = document.createElement('button');
+    btnExcluir.classList.add('btnExcluir');
+    let btnEditar = document.createElement('button');
+    btnEditar.classList.add('btnEditar'); 
 
     li.appendChild(btnCheck);
     li.appendChild(span);
-    li.appendChild(btnExcluir);
+    div.appendChild(btnEditar);
+    div.appendChild(btnExcluir);
+    li.appendChild(div);
 
     document.getElementById('listaTarefas').appendChild(li);
     document.getElementById('inputNovaTarefa').value = "";
@@ -32,6 +37,17 @@ function criaTarefa() {
             btnCheck.classList.add('btnChecked');
             span.style.textDecoration = 'line-through';
             span.style.color = '#ffffffad'
+        }
+    })
+
+    btnEditar.addEventListener('click', function () {
+        if (btnEditar.classList.length == 2) {
+            let tarefaNova = document.getElementById('tarefaNova').value;
+            span.innerHTML = tarefaNova;
+            btnEditar.classList.remove('salvar');
+        } else {
+            span.innerHTML = "<input class='edit' id='tarefaNova'>"
+            btnEditar.classList.add('salvar');
         }
     })
 }

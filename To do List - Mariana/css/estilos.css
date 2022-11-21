@@ -64,7 +64,9 @@ body {
     align-items: center;
     margin-top: 20px;
 }
-
+#listaTarefas div {
+    display: flex;
+}
 .btnCheck {
     background: #2b2a2a;
     border-radius: 20px;
@@ -80,7 +82,60 @@ body {
     content: "\f00c";
 }
 
-.btnAcao {
+.btnEditar {
+    border-radius: 20px;
+    border: 1px solid #191818;
+    width: 38px;
+    height: 38px;
+    margin-right: 8px;
+    cursor: pointer;
+    background: #2b2a2a;
+    color: #FFF;
+    outline: none;
+    position: relative;
+    font: normal normal normal 14px/1 FontAwesome;
+}
+.btnEditar::before {
+    content: '\f040';
+}
+.btnEditar:hover {
+    background: #3c3a3a;
+}
+
+.salvar::before {
+    content: '';
+    position: absolute;
+    background-color: transparent;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #CCC;
+    border-radius: 3px;
+    left: 11px;
+    top: 11px;
+}
+.salvar::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 3px;
+    transform: rotate(-45deg);
+    background-color: #CCC;
+    top: 13px;
+    right: 9px;
+    border-bottom-left-radius: 100%;
+    border-top-left-radius: 100%;
+}
+.edit {
+    background-color: #2b2a2a;
+    height: 25px;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 12px;
+    padding: 0 10px;
+}
+
+.btnExcluir {
     border-radius: 20px;
     border: 1px solid #191818;
     width: 38px;
@@ -92,11 +147,10 @@ body {
     outline: none;
     font: normal normal normal 14px/1 FontAwesome;
 }
-
-.btnAcao::before {
+.btnExcluir::before {
     content: "\f1f8";
 }
-.btnAcao:hover {
+.btnExcluir:hover {
     background: #3c3a3a;
 }
 
